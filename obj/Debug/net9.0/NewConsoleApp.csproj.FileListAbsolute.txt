@@ -12,3 +12,4 @@ C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\refint\NewConsoleApp.dll
 C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.pdb
 C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.genruntimeconfig.cache
 C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\ref\NewConsoleApp.dll
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.sourcelink.json
