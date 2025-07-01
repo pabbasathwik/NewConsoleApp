@@ -1,0 +1,14 @@
+C:\Users\sathw\NewConsoleApp\bin\Debug\net9.0\NewConsoleApp.exe
+C:\Users\sathw\NewConsoleApp\bin\Debug\net9.0\NewConsoleApp.deps.json
+C:\Users\sathw\NewConsoleApp\bin\Debug\net9.0\NewConsoleApp.runtimeconfig.json
+C:\Users\sathw\NewConsoleApp\bin\Debug\net9.0\NewConsoleApp.dll
+C:\Users\sathw\NewConsoleApp\bin\Debug\net9.0\NewConsoleApp.pdb
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.AssemblyInfoInputs.cache
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.AssemblyInfo.cs
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.dll
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\refint\NewConsoleApp.dll
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.pdb
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\NewConsoleApp.genruntimeconfig.cache
+C:\Users\sathw\NewConsoleApp\obj\Debug\net9.0\ref\NewConsoleApp.dll
