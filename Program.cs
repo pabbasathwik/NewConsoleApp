@@ -217,3 +217,6 @@ foreach (int num in yy)
 {
     Console.Write(num + " ");
 }
+Console.WriteLine(" ");
+
+Console.WriteLine("Sorted Array");
