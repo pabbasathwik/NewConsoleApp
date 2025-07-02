@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Globalization;
 using Microsoft.VisualBasic;
 
 // Print a simple message
@@ -169,3 +170,40 @@ jagged_array[2] = new int[] { 5600, 700, 800, 900 };
 jagged_array[3] = new int[] { 1000 };
 
 Console.WriteLine(jagged_array[0][1]);
+
+// Multi-dimensional arrays //
+
+// Declares a empty 2-D Arrays "int[,] u; "//
+
+// Declares a 2-D Array with size: "int[,] array_2d = new int[2, 3];" //
+int[,] x = { { 1, 2, 3 }, { 4, 5, 6 } };
+Console.WriteLine(x[0, 1]);
+
+int[,,] z = { { { 10, 20, 30 }, { 40, 50, 60 } }, { { 70, 80, 90 }, { 100, 110, 120 } } }; // 3-D array //
+Console.WriteLine(z[1,1,2]);
+
+foreach (int t in z)
+{
+    Console.WriteLine(t);
+}
+
+for (int kk = 0; kk < x.GetLength(0); kk++)    // 🧠 matrix.GetLength(0) → Rows //
+{
+    for (int nn = 0; nn < x.GetLength(1); nn++)  // 🧠 matrix.GetLength(1) → Columns //
+    {
+        Console.WriteLine(x[kk, nn]);
+    }
+}
+
+// Arrays Methods //
+
+int[] yy = { 1, 2, 4, 6, 2, 4, 5 };
+
+// Reverse the array
+Array.Reverse(yy);  // Modifies 'yy' directly
+
+// Print the reversed array
+foreach (int num in yy)
+{
+    Console.Write(num + " ");
+}
