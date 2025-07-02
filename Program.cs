@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Globalization;
 using Microsoft.VisualBasic;
+using System.Collections.Generic;  // for dynamic arrays i.e ==> LISTS
+
 
 // Print a simple message
 Console.WriteLine("Hello, World!");      
@@ -118,8 +120,11 @@ foreach (int nums in answer)
     Console.WriteLine(nums);            // Print each element
 }
 
-// int[] i; // Declare an array of integers
-// string[] b; // Declare an array of strings
+// Arrays:
+
+
+// int[] i; ==>   Declare an array of integers
+// string[] b; ==>  Declare an array of strings
 
 int[] o = new int[5]; // Array size 5, default values: 0
 
@@ -130,7 +135,7 @@ foreach (int q in l)
     Console.WriteLine(q);
 }
 
-
+// jagged_arrays:
 
 // Step 1: Declare the jagged array (3 rows)
 int[][] jagged = new int[3][];
@@ -151,6 +156,41 @@ for (int i = 0; i < jagged.Length; i++)
         Console.WriteLine();
 }
 
+
+// Another example of Jagged_array below
+int[][] jagged_array = new int[4][];
+jagged_array[0] = new int[] { 100, 200, 300 };
+jagged_array[1] = new int[] { 400, 500 };
+jagged_array[2] = new int[] { 5600, 700, 800, 900 };
+jagged_array[3] = new int[] { 1000 };
+
+Console.WriteLine(jagged_array[0][1]);
+
+// Multi-dimensional arrays
+
+// Declares a empty 2-D Arrays "int[,] u; "
+
+// Declares a 2-D Array with size: "int[,] array_2d = new int[2, 3];"
+int[,] x = { { 1, 2, 3 }, { 4, 5, 6 } };
+Console.WriteLine(x[0, 1]);
+
+int[,,] z = { { { 10, 20, 30 }, { 40, 50, 60 } }, { { 70, 80, 90 }, { 100, 110, 120 } } }; // 3-D array
+Console.WriteLine(z[1,1,2]);
+
+foreach (int t in z)
+{
+    Console.WriteLine(t);
+}
+
+for (int kk = 0; kk < x.GetLength(0); kk++)    // 🧠 matrix.GetLength(0) → Rows
+{
+    for (int nn = 0; nn < x.GetLength(1); nn++)  // 🧠 matrix.GetLength(1) → Columns
+    {
+        Console.WriteLine(x[kk, nn]);
+    }
+}
+
+
 /*
 
 | Jagged Array                  | Multidimensional Array             |
@@ -162,44 +202,11 @@ for (int i = 0; i < jagged.Length; i++)
 
 */
 
-// Another example of Jagged_array below //
-int[][] jagged_array = new int[4][];
-jagged_array[0] = new int[] { 100, 200, 300 };
-jagged_array[1] = new int[] { 400, 500 };
-jagged_array[2] = new int[] { 5600, 700, 800, 900 };
-jagged_array[3] = new int[] { 1000 };
-
-Console.WriteLine(jagged_array[0][1]);
-
-// Multi-dimensional arrays //
-
-// Declares a empty 2-D Arrays "int[,] u; "//
-
-// Declares a 2-D Array with size: "int[,] array_2d = new int[2, 3];" //
-int[,] x = { { 1, 2, 3 }, { 4, 5, 6 } };
-Console.WriteLine(x[0, 1]);
-
-int[,,] z = { { { 10, 20, 30 }, { 40, 50, 60 } }, { { 70, 80, 90 }, { 100, 110, 120 } } }; // 3-D array //
-Console.WriteLine(z[1,1,2]);
-
-foreach (int t in z)
-{
-    Console.WriteLine(t);
-}
-
-for (int kk = 0; kk < x.GetLength(0); kk++)    // 🧠 matrix.GetLength(0) → Rows //
-{
-    for (int nn = 0; nn < x.GetLength(1); nn++)  // 🧠 matrix.GetLength(1) → Columns //
-    {
-        Console.WriteLine(x[kk, nn]);
-    }
-}
-
-// Arrays Methods //
+// Arrays Methods 
 
 int[] yy = { 1, 2, 4, 6, 2, 4, 5 };
 
-// Reverse the array
+// 1. Array.Reserve(): Reverse the array
 Array.Reverse(yy);  // Modifies 'yy' directly
 
 // Print the reversed array
@@ -209,7 +216,7 @@ foreach (int num in yy)
 }
 Console.WriteLine(" ");
 
-// Sort the array
+// 2. Array.Sort(): Sort the array
 Array.Sort(yy);    // Modifies 'yy' directly
 
 // Print the sorted array
@@ -219,4 +226,88 @@ foreach (int num in yy)
 }
 Console.WriteLine(" ");
 
-Console.WriteLine("Sorted Array");
+// 3. Array.IndexOf(array, value)
+Console.WriteLine(Array.IndexOf(yy, 2));
+
+// 4. Array.LastIndexOf(array, value)
+Console.WriteLine(Array.LastIndexOf(yy, 2));
+
+// 5. Array.Copy(source, destination, length)
+int[] source = { 1, 2, 3 };
+int[] dest = new int[2];
+Array.Copy(source, dest, 2);
+
+foreach (int i in dest)
+{
+    Console.WriteLine(i);
+}
+
+// 6. Array.Exists(array, condition)
+int[] zz = { 10, 20, 30 };
+bool exists = Array.Exists(zz, n => n > 25);
+Console.WriteLine(exists);  // Output: True
+
+// 7. Array.Find(array, condition)
+int dd = Array.Find(yy, n => n > 2);  // Array.Find(array, condition)
+Console.WriteLine(dd);
+
+// 8. Array.FindAll(array, condition)
+int[] res = { 10, 20, 30 };
+int[] output = Array.FindAll(res, n => n > 10);  // filters values greater than 10
+Console.WriteLine(string.Join(", ", output));   // prints: 20, 30
+
+// 9. Array.Length
+Console.WriteLine(res.Length);
+
+// 10. Array.Rank
+// To get the number of dimensionals:
+int[,] matrix = new int[3, 4];
+Console.WriteLine(matrix.Rank); // Output: 2
+
+// 11. Array.Clone()
+int[] arr = { 1, 2, 3 };
+int[] copy = (int[])arr.Clone();
+Console.WriteLine(string.Join(",", copy));
+Console.WriteLine(string.Join(",", arr));
+
+// 12. Array.Resize(ref array, newSize)
+int[] val = { 1, 2, 3 };
+Array.Resize(ref val, 5);
+Console.WriteLine(string.Join(",",val));
+// Now nums = {1, 2, 3, 0, 0}
+
+
+// 13. Array.BinarySearch(array, value)
+int[] s = { 10, 20, 30, 40 };
+int index = Array.BinarySearch(s, 30); // Output: 2
+Console.WriteLine(index);
+
+// 14. Array.Clear(array, startIndex, count)
+int[] vals = { 10, 20, 30, 40 };
+Array.Clear(vals, 1, 2);  // Clear from index 1 to 2 (20, 30)
+Console.WriteLine(string.Join(",",vals));
+
+foreach (int i in vals)
+{
+    Console.Write(i + " ");
+}
+
+Console.WriteLine(" ");
+
+// 15. Array.TrueForAll(array, condition)
+int[] colls = { 2, 4, 6 };
+bool allEven = Array.TrueForAll(colls, n => n % 2 == 0);
+Console.WriteLine(allEven);
+// Output: True
+
+// Lists in C#:
+// 1. List Declaration and Initialization
+List<int> ggg = new List<int>();  // List Declaration
+List<int> ffff = new List<int>() { 10, 20, 30 }; // List Initialization
+Console.WriteLine(string.Join(",", ffff));
+// Output: 10,20,30 
+
+ggg.Add(100);
+ggg.Add(200);
+ggg.Add(300);
+Console.WriteLine(string.Join(',', ggg));
