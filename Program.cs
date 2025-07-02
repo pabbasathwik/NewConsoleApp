@@ -207,3 +207,13 @@ foreach (int num in yy)
 {
     Console.Write(num + " ");
 }
+Console.WriteLine(" ");
+
+// Sort the array
+Array.Sort(yy);    // Modifies 'yy' directly
+
+// Print the sorted array
+foreach (int num in yy)
+{
+    Console.Write(num + " ");
+}
